@@ -1,0 +1,135 @@
+/* Azan Way pages: same palette and hairline style as the app. */
+:root {
+  --bg: #F9F8F6;
+  --surface: #FFFFFF;
+  --ink: #111111;
+  --muted: #6E6E73;
+  --line: rgba(17, 17, 17, 0.1);
+  --accent: #8B5A2B;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1C1C1E;
+    --surface: #2C2C2E;
+    --ink: #F5F5F5;
+    --muted: #98989F;
+    --line: rgba(245, 245, 245, 0.12);
+    --accent: #CD853F;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Arabic", sans-serif;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 20px 72px;
+}
+
+header.page {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+header.page svg { flex: none; }
+
+.label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Spacing letters apart breaks joined Arabic script. */
+[dir="rtl"] .label { letter-spacing: 0; }
+
+h1 {
+  margin: 2px 0 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 32px 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+p, li { margin: 0 0 12px; }
+
+ul { padding-inline-start: 20px; margin: 0 0 12px; }
+
+a { color: var(--accent); text-underline-offset: 2px; }
+
+.meta { color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px 20px;
+  margin: 20px 0 8px;
+}
+
+.card p:last-child { margin-bottom: 0; }
+
+nav.langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+
+nav.langs a {
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 14px;
+  text-decoration: none;
+  background: var(--surface);
+}
+
+section.lang {
+  padding-top: 32px;
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+section.lang:first-of-type { border-top: 0; margin-top: 8px; }
+
+.q { font-weight: 600; margin: 24px 0 4px; }
+
+footer.page {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+footer.page a { margin-inline-end: 16px; }
+
+/* App mark: the Qibla dial from the app icon. */
+.mark-face { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.mark-tick { stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; }
+.mark-needle { stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round; }
+.mark-kaaba { fill: var(--accent); }
+.mark-pivot { fill: var(--ink); }
